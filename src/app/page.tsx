@@ -3,17 +3,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Info, Users, Trophy, Target, Calendar, Heart } from "lucide-react";
+import { Info, Users, Trophy, Heart, Crown } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Jane Doe",
+    name: "Jorge",
     role: "Founder & Lead Developer",
     avatar: "/team/jane-doe.jpg",
   },
   {
-    name: "John Smith",
-    role: "Community Manager",
+    name: "Zosa",
+    role: "Frontend Developer",
     avatar: "/team/john-smith.jpg",
   },
   {
@@ -36,31 +36,9 @@ const stats = [
     icon: Trophy,
     color: "text-yellow-400",
   },
-  { label: "Pro Players", value: 500, icon: Target, color: "text-green-400" },
+  { label: "Pro Players", value: 500, icon: Crown, color: "text-green-400" },
 ];
 
-const upcomingEvents = [
-  {
-    name: "Summer Showdown",
-    date: "2023-07-15",
-    description: "The biggest DBD tournament of the summer!",
-  },
-  {
-    name: "Killer Master Class",
-    date: "2023-07-22",
-    description: "Learn from the top killers in the game.",
-  },
-  {
-    name: "Survivor Skills Workshop",
-    date: "2023-07-29",
-    description: "Improve your survival skills with pro tips.",
-  },
-  {
-    name: "Community Challenge",
-    date: "2023-08-05",
-    description: "Join forces to complete epic community goals!",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -140,35 +118,6 @@ export default function AboutPage() {
         <Card className="bg-zinc-900/70 border-zinc-800">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <Calendar className="h-5 w-5 text-green-400" />
-              Upcoming Events
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {upcomingEvents.map((event, index) => (
-                <div key={index} className="bg-zinc-800/50 p-4 rounded-lg">
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="font-semibold text-zinc-100">
-                      {event.name}
-                    </h3>
-                    <Badge
-                      variant="outline"
-                      className="bg-green-500/20 text-green-300 border-green-500/50"
-                    >
-                      {new Date(event.date).toLocaleDateString()}
-                    </Badge>
-                  </div>
-                  <p className="text-sm text-zinc-400">{event.description}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-zinc-900/70 border-zinc-800">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
               <Heart className="h-5 w-5 text-red-400" />
               Join Our Community
             </CardTitle>
@@ -181,13 +130,13 @@ export default function AboutPage() {
               here.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
-              <Badge className="bg-blue-500 hover:bg-blue-600 cursor-pointer">
+              <Badge className="bg-gradient-to-r from-[#60EFFF] to-[#0061FF] hover:from-[#60EFFF]/80 hover:to-[#0061FF]/80 cursor-pointer">
                 Join Discord
               </Badge>
-              <Badge className="bg-purple-500 hover:bg-purple-600 cursor-pointer">
+              <Badge className="bg-gradient-to-r from-[#bf0fff] to-[#f8acff] hover:from-[#bf0fff]/80 hover:to-[#f8acff]/80 cursor-pointer">
                 Follow on Twitch
               </Badge>
-              <Badge className="bg-red-500 hover:bg-red-600 cursor-pointer">
+              <Badge className="bg-gradient-to-r from-[#ef709b] via-[#ffc8c8] to-[#ff5858] hover:from-[#ef709b]/80 hover:to-[#ff5858]/80 cursor-pointer">
                 Subscribe on YouTube
               </Badge>
               <Badge className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 cursor-pointer">
